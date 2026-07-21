@@ -52,7 +52,7 @@ function extrairCoordenadas(texto) {
 }
 
 function sanitizarNome(nome) {
-    return nome.replace(/[^a-zA-Z0-9 ]/g, '').substring(0, 40);
+    return nome.replace(/[<>"'&;]/g, '').substring(0, 60);
 }
 
 module.exports = async (req, res) => {
